@@ -1,0 +1,120 @@
+$Mobile: 520px;
+$tablet: 780px;
+$Desktop: 1240px;
+
+@mixin responsivi($breakpoints){
+    @media screen and (max-width: $breakpoint){
+        @content;
+    }
+}
+
+.background{
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: -1;
+   height: 100%;
+   width: 30%;
+   background: url('../../../images/bg-main-desktop.png')no-repeat center / cover;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+}
+.cards{
+    margin-right: 80px;
+}
+.card-front{
+    width: 350px;
+    height: 200px;
+    border-radius: 10px;
+    background: url('../../../images/bg-card-front.png')no-repeat center / cover;
+    padding: 24px;
+    margin-bottom: 32px;
+    box-shadow: 5px 5px 16px 0px rgba(0, 0, 0, 0.14);
+    
+    .front-logo{
+        width: 56px;
+        height: 56px;
+        margin-bottom: 32px;
+
+        img{
+            width: 100%;
+        }
+    }
+
+    .front-info{
+        .card-number{
+            width: 100%;
+          
+            color: $White;
+            font-size: 24px;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+        .info-bottom{
+            display: flex;
+            justify-content: space-between;
+
+            .card-name, .card-date{
+                text-transform: uppercase;
+                color: $White;
+            }
+        }
+    }
+}
+
+.card-back{
+    width: 350px;
+    height: 200px;
+    border-radius: 10px;
+    background: url('../../../images/bg-card-back.png')no-repeat center / cover;
+    margin-left: 92px;
+    box-shadow: 5px 5px 16px 0px rgba(0, 0, 0, 0.14);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    label, p{
+        color: $Very-dark-violet;
+        text-transform: uppercase;
+        font-weight: 500;
+        letter-spacing: 2px;
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    #name, #number, #ano{
+        margin-bottom: 24px;
+    }
+
+    input{
+        background-color: transparent;
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid $Light-grayish-violet;
+        outline: none;
+        color: $Dark-grayish-violet;
+        &::placeholder{
+            font-weight: 400;
+            color: $Dark-grayish-violet;
+        }
+    }
+
+    .cvc{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 24px;
+    }
+    button{
+        height: 40px;
+        background-color: $Very-dark-violet;
+        color: $White;
+        font-size: 16px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+    }
+}
